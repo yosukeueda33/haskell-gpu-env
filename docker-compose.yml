@@ -1,0 +1,12 @@
+version: '3'
+services:
+  haskell-cuda:
+    build:
+      context: ./env
+      dockerfile: Dockerfile
+    volumes:
+      - ./mnt:/app/mnt
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+
